@@ -15,19 +15,33 @@ class _ResponsividadeMediaQueryState extends State<ResponsividadeMediaQuery> {
     var altura = MediaQuery.of(context).size.height;
     var alturaBarraStatus = MediaQuery.of(context).padding.top;
     var alturaAppBar = AppBar().preferredSize.height;
+    // var larguraItem = largura * 0.25;
+    var larguraItem = largura / 3;
 
     return Scaffold(
       appBar: AppBar(
         title: const Text("Responsividade"),
       ),
-      body: Column(
+      body: Row(
         children: [
           Container(
-            width: largura,
-            height: altura - alturaAppBar - alturaBarraStatus,
+            width: larguraItem,
+            height: 200,
             color: Colors.red,
             child: const Text("Responsividade"),
-          )
+          ),
+          Container(
+            width: larguraItem,
+            height: 200,
+            color: Colors.black,
+            child: const Text("Responsividade"),
+          ),
+          Container(
+            width: larguraItem,
+            height: 200,
+            color: Colors.yellow,
+            child: const Text("Responsividade"),
+          ),
         ],
       ),
     );
